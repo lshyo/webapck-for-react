@@ -1,6 +1,5 @@
-import _ from 'lodash'
 
-function test(){
-    alert("test")
+const test=()=>{
+
 }
 export default test

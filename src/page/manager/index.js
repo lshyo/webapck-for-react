@@ -3,6 +3,20 @@ import './indexless.less'
 
 import Test from "./manager"
 
+const syntax=()=>{
+
+    const objs = {a:"1",child:{son:"hell"}}
+    const  x = 11;
+    let a = do {
+        if(x > 10) {
+            'big';
+        } else {
+            'small';
+        }
+    };
+    console.log("babel插件",objs?.child?.son, 1??"aaa" ,a)
+}
+
 function firstDom(){
     let fun =function(){
         console.log("this1",this,window)
@@ -14,6 +28,7 @@ function firstDom(){
         }
     }
     fun()
+    syntax();
 
     //
     const el = document.createElement("div")
@@ -23,7 +38,7 @@ function firstDom(){
     const btn = document.createElement("button")
     btn.innerHTML = "113331";
 
-    btn.addEventListener("click",async function(){
+    btn.addEventListener("click", function(){
 
         new Test({name:"linsh",age:11})
 

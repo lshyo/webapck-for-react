@@ -20,6 +20,18 @@ module.exports={
 
         rules:[
             {
+                test:/\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                include: [paths.appSrc],
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets:['@babel/preset-env'],
+                        // cacheDirectory:true
+                    }
+                }
+            },
+            {
                 test:/\.css$/,
                 use:[
                     devMode ? "style-loader" : MiniCssExtractPlugin.loader,// 用了 MiniCssExtractPlugin 就不能再用style-loader
