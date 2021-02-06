@@ -24,11 +24,7 @@ module.exports={
                 exclude: /(node_modules|bower_components)/,
                 include: [paths.appSrc],
                 use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets:['@babel/preset-env'],
-                        // cacheDirectory:true
-                    }
+                    loader: 'babel-loader', // 配置可以统一在 babel.config.json中写。两边的配置都是会生效。
                 }
             },
             {
