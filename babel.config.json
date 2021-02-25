@@ -16,7 +16,8 @@
           "proposals": true
         }
       }
-    ]
+    ],
+    "@babel/preset-react"
   ],
   "plugins": [
     "@babel/plugin-proposal-do-expressions",

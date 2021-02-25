@@ -12,8 +12,7 @@ const devMode= process.env.NODE_ENV === 'development';
 
 module.exports={
     entry:{
-        app:path.resolve(__dirname,"../src/page/manager/index.js"),
-        template:path.resolve(__dirname,"../src/page/template/index.js"),
+        app:path.resolve(__dirname,"../src/page/manager/index.js")
     },
     module:{
         noParse: /jquery/,// 不解析x中的依赖库，忽略大型的 library 可以提高构建性能
