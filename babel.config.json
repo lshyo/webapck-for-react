@@ -21,7 +21,7 @@
   ],
   "plugins": [
     "@babel/plugin-proposal-do-expressions",
-    "@babel/transform-runtime",
-    "transform-remove-console"
+    "@babel/transform-runtime"
+//    "transform-remove-console"
   ]
 }

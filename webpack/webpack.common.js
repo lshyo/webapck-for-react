@@ -2,6 +2,11 @@ const path = require('path')
 const fs =require('fs')
 const webpack = require('webpack')
 const paths = require('./paths.js')
+
+// config
+const {entrys , htmlPlugins} = require("./entry")
+
+
 // plugin
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
@@ -12,7 +17,7 @@ const devMode= process.env.NODE_ENV === 'development';
 
 module.exports={
     entry:{
-        app:path.resolve(__dirname,"../src/page/manager/index.js")
+        ...entrys
     },
     module:{
         noParse: /jquery/,// 不解析x中的依赖库，忽略大型的 library 可以提高构建性能
@@ -55,15 +60,16 @@ module.exports={
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            title:"从零开始的webpck配置",
-            template: path.resolve(__dirname,"./template/index.html"),
-            filename: "index.html",
-            loading:{
-                css:`<style type="text/css">${fs.readFileSync(path.join(__dirname,'./template/loading.less'))}</style>`,
-                html:fs.readFileSync(path.join(__dirname,'./template/loading.html'))
-            }
-        }),
+        ...htmlPlugins,
+        // new HtmlWebpackPlugin({
+        //     title:"从零开始的webpck配置",
+        //     template: path.resolve(__dirname,"./template/index.html"),
+        //     filename: "test/index.html",
+        //     loading:{
+        //         css:`<style type="text/css">${fs.readFileSync(path.join(__dirname,'./template/loading.less'))}</style>`,
+        //         html:fs.readFileSync(path.join(__dirname,'./template/loading.html'))
+        //     }
+        // }),
 
         new webpack.ProvidePlugin({
             $:"jquery",

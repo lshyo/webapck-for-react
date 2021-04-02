@@ -7,8 +7,8 @@ import React from 'react'
 
 const Home = () => {
 	return (
-		<div>Home </div>
+		<div>template</div>
 	)
 }
 
-export default Home 
+export default Home
