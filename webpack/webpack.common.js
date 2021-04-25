@@ -34,7 +34,7 @@ module.exports={
             {
                 test:/\.css$/,
                 use:[
-                    devMode ? "style-loader" : MiniCssExtractPlugin.loader,// 用了 MiniCssExtractPlugin 就不能再用style-loader
+                        devMode ? "style-loader" : MiniCssExtractPlugin.loader,// 用了 MiniCssExtractPlugin 就不能再用style-loader
                     "css-loader"
                 ]
             },
@@ -52,8 +52,9 @@ module.exports={
                 use:['file-loader']
             },
             {
-                test:/\.ts$/,
+                test:/\.(ts|tsx)$/,
                 use:["ts-loader"],
+                include: [paths.appSrc],
                 exclude: /node_modules/
             }
         ]

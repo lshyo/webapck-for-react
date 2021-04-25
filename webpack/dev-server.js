@@ -1,7 +1,7 @@
 const webpackDevServer = require('webpack-dev-server')
 const webpack = require('webpack')
 
-const config = require('./webpack.dev.js')
+const devWebpackConfig = require('./webpack.dev.js')
 
 const devOptions = {
     contentBase:"../dist",
@@ -10,9 +10,9 @@ const devOptions = {
     open:true
 }
 
-webpackDevServer.addDevServerEntrypoints(config,devOptions)
+webpackDevServer.addDevServerEntrypoints(devWebpackConfig,devOptions)
 
-const compiler = webpack(config)
+const compiler = webpack(devWebpackConfig)
 
 const server = new webpackDevServer(compiler,devOptions)
 
