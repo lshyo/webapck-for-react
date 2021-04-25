@@ -6,7 +6,7 @@
   "author": "linsh",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js",
     "start": "cross-env NODE_ENV=development node webpack/dev-server.js",
     "analyzer": "cross-env NODE_ENV=production analyzer=analyzer webpack --config webpack/webpack.prod.js"
   },
