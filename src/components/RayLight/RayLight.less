@@ -1,0 +1,28 @@
+.line{
+    height: 6px;
+    position: relative;
+    overflow: hidden;
+}
+.moveLine{
+    position: absolute;
+    height: 77px;
+    width: 77px;
+    transform: rotate(90deg);
+    animation-name:leftLeft;
+    animation-duration: 2s;
+    animation-iteration-count:infinite;
+    background: url("./img/linght.png")no-repeat;
+}
+@keyframes leftLeft {
+    0%{
+        left: -100%;
+        opacity: 1;
+    }
+    60%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        left: 100%;
+    }
+}
