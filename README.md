@@ -10,13 +10,3 @@
 
 1：新增多页配置
 
-2021-02-25
-
-1：新增react，react-router配置。实现一个react页面(单页)
-
-2021-02-05
-
-1：新增babel相关依赖，babel.config.js配置文件
-
-2：webpack新增 babel-loader配置
-
